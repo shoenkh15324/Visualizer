@@ -6,15 +6,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/api/source/cdc.c \
-../Core/api/source/cli.c 
+../Core/api/source/cli.c \
+../Core/api/source/uart.c 
 
 OBJS += \
 ./Core/api/source/cdc.o \
-./Core/api/source/cli.o 
+./Core/api/source/cli.o \
+./Core/api/source/uart.o 
 
 C_DEPS += \
 ./Core/api/source/cdc.d \
-./Core/api/source/cli.d 
+./Core/api/source/cli.d \
+./Core/api/source/uart.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +27,7 @@ Core/api/source/%.o Core/api/source/%.su Core/api/source/%.cyclo: ../Core/api/so
 clean: clean-Core-2f-api-2f-source
 
 clean-Core-2f-api-2f-source:
-	-$(RM) ./Core/api/source/cdc.cyclo ./Core/api/source/cdc.d ./Core/api/source/cdc.o ./Core/api/source/cdc.su ./Core/api/source/cli.cyclo ./Core/api/source/cli.d ./Core/api/source/cli.o ./Core/api/source/cli.su
+	-$(RM) ./Core/api/source/cdc.cyclo ./Core/api/source/cdc.d ./Core/api/source/cdc.o ./Core/api/source/cdc.su ./Core/api/source/cli.cyclo ./Core/api/source/cli.d ./Core/api/source/cli.o ./Core/api/source/cli.su ./Core/api/source/uart.cyclo ./Core/api/source/uart.d ./Core/api/source/uart.o ./Core/api/source/uart.su
 
 .PHONY: clean-Core-2f-api-2f-source
 

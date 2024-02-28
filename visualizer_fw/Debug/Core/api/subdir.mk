@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/api/common.c 
+../Core/api/common.c \
+../Core/api/qbuffer.c 
 
 OBJS += \
-./Core/api/common.o 
+./Core/api/common.o \
+./Core/api/qbuffer.o 
 
 C_DEPS += \
-./Core/api/common.d 
+./Core/api/common.d \
+./Core/api/qbuffer.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ Core/api/%.o Core/api/%.su Core/api/%.cyclo: ../Core/api/%.c Core/api/subdir.mk
 clean: clean-Core-2f-api
 
 clean-Core-2f-api:
-	-$(RM) ./Core/api/common.cyclo ./Core/api/common.d ./Core/api/common.o ./Core/api/common.su
+	-$(RM) ./Core/api/common.cyclo ./Core/api/common.d ./Core/api/common.o ./Core/api/common.su ./Core/api/qbuffer.cyclo ./Core/api/qbuffer.d ./Core/api/qbuffer.o ./Core/api/qbuffer.su
 
 .PHONY: clean-Core-2f-api
 

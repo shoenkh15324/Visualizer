@@ -25,7 +25,7 @@
 typedef struct
 {
 	uint16_t argc; // Number of arguments in cli commands
-	char **argc; // An array of pointers pointing to a string for each argument
+	char **argv; // An array of pointers pointing to a string for each argument
 
 	int32_t (*getData)(uint8_t index); // Function pointers for obtaining data from the CLI
 	float (*getFloat)(uint8_t index); // Function pointer to get floating point format data from the CLI

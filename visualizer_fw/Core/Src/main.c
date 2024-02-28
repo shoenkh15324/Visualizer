@@ -18,13 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "usart.h"
 #include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "common.h"
-#include "cdc.h"
+#include "uart.h"
 #include "cli.h"
 /* USER CODE END Includes */
 
@@ -89,6 +90,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USB_DEVICE_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -98,14 +100,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-  	if(cdcAvailable()>0)
-  	{
-  		uint8_t rx_data;
-
-    	rx_data = cdcRead();
-    	cdcPrintf("Rx_Data : %c 0x%X\n", rx_data, rx_data);
-  	}
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

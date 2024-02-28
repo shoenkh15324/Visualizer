@@ -103,4 +103,9 @@ uint32_t cdcPrintf(char *fmt, ...)
 	return ret;
 }
 
+/*uint8_t cdcGetRead()
+{
+	return Linecoding.bitrate;
+}*/
+
 #endif

@@ -23,7 +23,13 @@
 #include "cdc.h"
 
 /* USER CODE BEGIN INCLUDE */
-
+USBD_CDC_LineCodingTypeDef Linecoding =
+		{
+				115200,
+				0x00,
+				0x00,
+				0x08
+		};
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -221,11 +227,23 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
   /* 6      | bDataBits  |   1   | Number Data bits (5, 6, 7, 8 or 16).          */
   /*******************************************************************************/
     case CDC_SET_LINE_CODING:
-
+    	Linecoding.bitrate = (uint32_t)(pbuf[0]);
+    	Linecoding.bitrate |= (uint32_t)(pbuf[1]<<8);
+    	Linecoding.bitrate |= (uint32_t)(pbuf[2]<<16);
+    	Linecoding.bitrate |= (uint32_t)(pbuf[3]<<24);
+    	Linecoding.format = pbuf[4];
+    	Linecoding.paritytype = pbuf[5];
+    	Linecoding.datatype = pbuf[6];
     break;
 
     case CDC_GET_LINE_CODING:
-
+      pbuf[0] = (uint8_t)(Linecoding.bitrate);
+      pbuf[1] = (uint8_t)(Linecoding.bitrate>>8);
+      pbuf[2] = (uint8_t)(Linecoding.bitrate>>16);
+      pbuf[3] = (uint8_t)(Linecoding.bitrate>>24);
+      pbuf[4] = Linecoding.format;
+      pbuf[5] = Linecoding.paritytype;
+      pbuf[6] = Linecoding.datatype;
     break;
 
     case CDC_SET_CONTROL_LINE_STATE:

@@ -1,0 +1,6 @@
+../Core/api/source/uart.c:35:6:uartInit	1
+../Core/api/source/uart.c:40:6:uartOpen	2
+../Core/api/source/uart.c:72:10:uartAvailable	2
+../Core/api/source/uart.c:93:9:uartRead	2
+../Core/api/source/uart.c:113:10:uartWrite	2
+../Core/api/source/uart.c:141:10:uartPrintf	1

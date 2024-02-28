@@ -28,7 +28,7 @@ bool qbufferCreate(qbuffer_t *p_node, uint8_t *p_buf, uint32_t len)
 	return ret;
 }
 
-void qbufferWrite(qbuffer_t *p_node, uint8_t *p_data, uint32_t len)
+bool qbufferWrite(qbuffer_t *p_node, uint8_t *p_data, uint32_t len)
 {
 	bool ret = true;
 	uint32_t next_in;
@@ -81,7 +81,7 @@ bool qbufferRead(qbuffer_t *p_node, uint8_t *p_data, uint32_t len)
 }
 uint32_t qbufferAvailable(qbuffer_t *p_node)
 {
-	uint32 ret = (p_node->in - p_node->out) % p_node->len;
+	uint32_t ret = (p_node->in - p_node->out) % p_node->len;
 	return ret;
 }
 

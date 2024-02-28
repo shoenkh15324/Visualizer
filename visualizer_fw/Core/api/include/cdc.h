@@ -21,6 +21,7 @@ uint8_t cdcRead(void);
 void cdcDataIn(uint8_t rx_data);
 uint32_t cdcWrite(uint8_t *p_data, uint32_t len);
 uint32_t cdcPrintf(char *fmt, ...);
+uint8_t cdcGetRead(void);
 
 #endif
 
