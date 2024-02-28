@@ -1,0 +1,5 @@
+../Core/api/source/cdc.c:26:10:cdcAvailable	1
+../Core/api/source/cdc.c:35:9:cdcRead	2
+../Core/api/source/cdc.c:49:6:cdcDataIn	2
+../Core/api/source/cdc.c:61:10:cdcWrite	4
+../Core/api/source/cdc.c:89:10:cdcPrintf	1

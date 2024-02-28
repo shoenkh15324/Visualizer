@@ -1,0 +1,5 @@
+../Core/api/source/cdc.c:26:10:cdcAvailable	16	static
+../Core/api/source/cdc.c:35:9:cdcRead	16	static
+../Core/api/source/cdc.c:49:6:cdcDataIn	24	static
+../Core/api/source/cdc.c:61:10:cdcWrite	24	static
+../Core/api/source/cdc.c:89:10:cdcPrintf	280	static
