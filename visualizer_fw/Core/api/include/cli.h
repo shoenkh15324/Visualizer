@@ -35,9 +35,15 @@ typedef struct
 
 
 bool cliInit(void);
-bool cliOpen();
-bool cliOpenLog();
-
+bool cliOpen(uint8_t ch, uint32_t baud);
+bool cliOpenLog(uint8_t ch, uint32_t baud);
+bool cliMain(void);
+void cliPrintf(const char *fmt, ...);
+bool cliAdd(const char *cmd_str, void (*p_func)(cli_args_t *));
+bool cliKeepLoop(void);
+uint32_t cliAvailable(void);
+uint8_t cliRead(void);
+uint32_t cliWrite(uint8_t *p_data, uint32_t lenght);
 
 #endif
 
