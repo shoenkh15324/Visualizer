@@ -20,7 +20,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc_if.h"
-#include "cdc.h"
 
 /* USER CODE BEGIN INCLUDE */
 USBD_CDC_LineCodingTypeDef Linecoding =
