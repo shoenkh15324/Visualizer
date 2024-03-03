@@ -8,6 +8,6 @@
 ../Core/api/source/sd.c:154:6:sdReadBlocks	32	static
 ../Core/api/source/sd.c:186:6:sdWriteBlocks	32	static
 ../Core/api/source/sd.c:219:6:sdEraseBlocks	24	static
-../Core/api/source/sd.c:232:6:HAL_SD_TxCpltCallback	16	static
-../Core/api/source/sd.c:237:6:HAL_SD_RxCpltCallback	16	static
+../Core/api/source/sd.c:232:13:HAL_SD_TxCpltCallback	16	static
+../Core/api/source/sd.c:237:13:HAL_SD_RxCpltCallback	16	static
 ../Core/api/source/sd.c:244:6:cliSd	552	static

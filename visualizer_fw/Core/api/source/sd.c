@@ -229,12 +229,12 @@ bool sdEraseBlocks(uint32_t start_addr, uint32_t end_addr)
 }
 
 
-void HAL_SD_TxCpltCallback(SD_HandleTypeDef *hsd)
+__weak void HAL_SD_TxCpltCallback(SD_HandleTypeDef *hsd)
 {
 	is_tx_done = true;
 }
 
-void HAL_SD_RxCpltCallback(SD_HandleTypeDef *hsd)
+__weak void HAL_SD_RxCpltCallback(SD_HandleTypeDef *hsd)
 {
 	is_rx_done = true;
 }
