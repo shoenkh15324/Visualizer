@@ -12,7 +12,7 @@
 #ifdef _USE_HW_CDC
 
 
-#define BUF_SIZE 1024
+#define BUF_SIZE 512
 
 
 // circular queue
@@ -25,7 +25,7 @@ bool rx_full=false;
 
 uint32_t cdcAvailable(void)
 {
-	uint32_t ret = -1;
+	uint32_t ret;
 
 	ret = (rx_in - rx_out) % BUF_SIZE;
 

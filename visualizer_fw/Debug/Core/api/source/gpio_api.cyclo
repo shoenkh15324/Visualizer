@@ -1,0 +1,6 @@
+../Core/api/source/gpio_api.c:38:6:gpioInit	1
+../Core/api/source/gpio_api.c:49:6:gpioPinMode	8
+../Core/api/source/gpio_api.c:98:6:gpioPinWrite	3
+../Core/api/source/gpio_api.c:115:6:gpioPinRead	3
+../Core/api/source/gpio_api.c:132:6:gpioPinToggle	2
+../Core/api/source/gpio_api.c:145:6:cliGpio	11

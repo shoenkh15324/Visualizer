@@ -12,15 +12,16 @@
 #include "hw_def.h"
 
 
-#ifdef _USE_HW_UART
-
-
-#define UART_MAX_CH		HW_UART_MAX_CH
-
 #define _DEF_UART1		0
 #define _DEF_UART2		1
 #define _DEF_UART3		2
 #define _DEF_UART4		3
+
+
+#ifdef _USE_HW_UART
+
+
+#define UART_MAX_CH		HW_UART_MAX_CH
 
 
 bool uartInit(void);

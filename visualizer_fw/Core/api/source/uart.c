@@ -9,18 +9,19 @@
 #include "uart.h"
 #include "cdc.h"
 #include "qbuffer.h"
-#include "usart.h"
 
+
+
+#define _USE_UART1
 
 #ifdef _USE_HW_UART
-
-
-#define _USE_UART2
 
 
 static bool is_open[UART_MAX_CH]; // check channel number
 
 #ifdef _USE_UART2
+
+#include "usart.h"
 
 static qbuffer_t qbuffer[UART_MAX_CH]; // Make qbuffer as number of uart channels
 static uint8_t rx_buf[256]; // Size of qbuffer

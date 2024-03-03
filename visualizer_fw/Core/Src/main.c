@@ -19,15 +19,19 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dma.h"
-#include "usart.h"
+#include "sdio.h"
 #include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "common.h"
+#include "hw_def.h"
+#include "led.h"
 #include "uart.h"
 #include "cli.h"
+#include "cdc.h"
+#include "gpio_api.h"
+#include "sd.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -92,9 +96,15 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_USB_DEVICE_Init();
-  MX_USART1_UART_Init();
+  MX_SDIO_SD_Init();
   /* USER CODE BEGIN 2 */
-  uartOpen(_DEF_UART2, 115200);
+  cliInit();
+  ledInit();
+  gpioInit();
+  sdInit();
+
+  cliOpen(_DEF_UART1, 115200);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -104,12 +114,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  	if(uartAvailable(_DEF_UART2) > 0)
-  		{
-    		uint8_t rx_data;
-    		rx_data = uartRead(_DEF_UART2);
-    		uartPrintf(_DEF_UART2, "UART Rx : %c %X\n", rx_data, rx_data);
-    	}
+  	cliMain();
   }
   /* USER CODE END 3 */
 }
