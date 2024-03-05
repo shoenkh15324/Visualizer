@@ -25,14 +25,13 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Core/api \
+Core/api/fatfs \
 Core/api/source \
 Drivers/STM32F4xx_HAL_Driver/Src \
-FATFS/App \
-FATFS/Target \
+FatFs/src \
+FatFs/src/option \
 Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src \
-Middlewares/Third_Party/FatFs/src \
-Middlewares/Third_Party/FatFs/src/option \
 USB_DEVICE/App \
 USB_DEVICE/Target \
 

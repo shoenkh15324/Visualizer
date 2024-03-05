@@ -1,3 +1,0 @@
-../Core/api/source/fatfs_api.c:29:6:fatfsInit	16	static
-../Core/api/source/fatfs_api.c:51:9:fatfsDir	96	static
-../Core/api/source/fatfs_api.c:82:6:cliFatfs	624	static

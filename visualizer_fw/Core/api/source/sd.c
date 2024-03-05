@@ -32,6 +32,8 @@ bool sdInit(void)
 {
 	bool ret = false;
 
+  hsd.Init.BusWide = SDIO_BUS_WIDE_1B;
+
 	is_detected = false;
 	if(gpioPinRead(_PIN_GPIO_SDCARD_DETECT) == true)
 	{
