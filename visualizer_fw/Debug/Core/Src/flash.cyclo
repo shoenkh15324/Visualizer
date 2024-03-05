@@ -1,0 +1,6 @@
+../Core/Src/flash.c:41:6:flashInit	1
+../Core/Src/flash.c:51:6:flashErase	5
+../Core/Src/flash.c:95:6:flashWrite	3
+../Core/Src/flash.c:121:6:flashRead	2
+../Core/Src/flash.c:134:6:flashInSector	9
+../Core/Src/flash.c:173:6:cliFlash	14

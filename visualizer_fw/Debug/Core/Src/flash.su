@@ -1,0 +1,6 @@
+../Core/Src/flash.c:41:6:flashInit	8	static
+../Core/Src/flash.c:51:6:flashErase	56	static
+../Core/Src/flash.c:95:6:flashWrite	48	static
+../Core/Src/flash.c:121:6:flashRead	40	static
+../Core/Src/flash.c:134:6:flashInSector	48	static
+../Core/Src/flash.c:173:6:cliFlash	56	static
