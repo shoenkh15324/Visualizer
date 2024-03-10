@@ -1,0 +1,15 @@
+../Core/api/source/spi_api.c:35:6:spiInit	16	static
+../Core/api/source/spi_api.c:56:6:spiBegin	24	static
+../Core/api/source/spi_api.c:76:6:spiSetDataMode	24	static
+../Core/api/source/spi_api.c:114:6:spiBitWidth	24	static
+../Core/api/source/spi_api.c:129:9:spiTransfer8	32	static
+../Core/api/source/spi_api.c:141:10:spiTransfer16	40	static
+../Core/api/source/spi_api.c:169:6:spiTransfer	40	static
+../Core/api/source/spi_api.c:198:6:spiDmaTxStart	32	static
+../Core/api/source/spi_api.c:208:6:spiDmaTxTransfer	32	static
+../Core/api/source/spi_api.c:235:6:spiDmaTxIsDone	24	static
+../Core/api/source/spi_api.c:244:6:spiAttachTxInterrupt	24	static
+../Core/api/source/spi_api.c:253:6:HAL_SPI_ErrorCallback	16	static
+../Core/api/source/spi_api.c:261:6:HAL_SPI_TxCpltCallback	24	static
+../Core/api/source/spi_api.c:277:6:HAL_SPI_TxRxCpltCallback	24	static
+../Core/api/source/spi_api.c:295:6:cliSpi	24	static

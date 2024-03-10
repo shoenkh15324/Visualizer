@@ -17,10 +17,10 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <fatfs.h>
 #include "main.h"
 #include "dma.h"
 #include "sdio.h"
+#include "spi.h"
 #include "usb_device.h"
 #include "gpio.h"
 
@@ -33,6 +33,9 @@
 #include "cdc.h"
 #include "gpio_api.h"
 #include "sd.h"
+#include "fatfs.h"
+#include "flash.h"
+#include "spi_api.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,13 +101,15 @@ int main(void)
   MX_DMA_Init();
   MX_USB_DEVICE_Init();
   MX_SDIO_SD_Init();
+  MX_SPI4_Init();
   /* USER CODE BEGIN 2 */
   cliInit();
   ledInit();
   gpioInit();
   sdInit();
   fatfsInit();
-
+  flashInit();
+  spiInit();
 
   cliOpen(_DEF_UART1, 115200);
 

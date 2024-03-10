@@ -17,6 +17,7 @@
 #define _USE_HW_FLASH
 #define _USE_HW_FATFS
 
+
 #define _USE_HW_LED
 #define HW_LED_MAX_CH			1
 
@@ -35,6 +36,8 @@
 #define HW_CLI_LINE_HIS_MAX		5
 #define HW_CLI_LINE_BUF_MAX		64
 
+#define _USE_HW_SPI
+#define HW_SPI_MAX_CH		1
 
 // GPIO mode set
 #define _DEF_LOW              0
