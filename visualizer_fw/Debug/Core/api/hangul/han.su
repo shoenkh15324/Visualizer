@@ -1,0 +1,2 @@
+../Core/api/hangul/han.c:17:10:hanFontLoad	24	static
+../Core/api/hangul/han.c:64:6:hanWanFontLoad	16	static

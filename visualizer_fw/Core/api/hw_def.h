@@ -39,6 +39,27 @@
 #define _USE_HW_SPI
 #define HW_SPI_MAX_CH		1
 
+#define _USE_HW_LCD
+#define HW_LCD_MODEL		2
+#if HW_LCD_MODEL == 0
+#define _USE_HW_ST7735
+#define      HW_ST7735_MODEL        0
+#define      HW_LCD_WIDTH           160
+#define      HW_LCD_HEIGHT          80
+#endif
+#if HW_LCD_MODEL == 1
+#define _USE_HW_SSD1306
+#define      HW_SSD1306_MODEL       0
+#define      HW_LCD_WIDTH           128
+#define      HW_LCD_HEIGHT          64
+#endif
+#if HW_LCD_MODEL == 2
+#define _USE_HW_ST7735
+#define      HW_ST7735_MODEL        1
+#define      HW_LCD_WIDTH           160
+#define      HW_LCD_HEIGHT          128
+#endif
+
 // GPIO mode set
 #define _DEF_LOW              0
 #define _DEF_HIGH             1
@@ -49,6 +70,9 @@
 #define _DEF_OUTPUT           3
 #define _DEF_OUTPUT_PULLUP    4
 #define _DEF_OUTPUT_PULLDOWN  5
+
+
+#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
 
 
 #endif /* API_HW_DEF_H_ */

@@ -12,4 +12,4 @@
 ../Core/api/source/spi_api.c:253:6:HAL_SPI_ErrorCallback	2
 ../Core/api/source/spi_api.c:261:6:HAL_SPI_TxCpltCallback	3
 ../Core/api/source/spi_api.c:277:6:HAL_SPI_TxRxCpltCallback	3
-../Core/api/source/spi_api.c:295:6:cliSpi	7
+../Core/api/source/spi_api.c:295:6:cliSpi	4
