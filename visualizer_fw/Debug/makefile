@@ -17,6 +17,7 @@ RM := rm -rf
 -include FatFs/src/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/api/source/subdir.mk
+-include Core/api/lcd/subdir.mk
 -include Core/api/hangul/subdir.mk
 -include Core/api/fatfs/subdir.mk
 -include Core/api/subdir.mk

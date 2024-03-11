@@ -73,8 +73,8 @@ void hanWanFontLoad(char *HanCode, han_font_t *FontPtr)
 	wHanCode = hanCnvCodeWan2Johab(wHanCode);
 
 	// seperate phoneme code
-	uChosung = (wHanCode >> 10) & 0x001F // Chosung code
-  uJoongsung = (wHanCode>>5) &0x001F;//Joongsung code
+	uChosung = (wHanCode>>10) & 0x001F; // Chosung code
+  uJoongsung = (wHanCode>>5) & 0x001F;//Joongsung code
 	uJongsung  = wHanCode & 0x001F;    //Jongsung code
 
   //make font index
@@ -86,7 +86,7 @@ void hanWanFontLoad(char *HanCode, han_font_t *FontPtr)
   uChoType = uJongsung ? ChoTypeCaseJongYes[uJoongsung]:ChoTypeCaseJongNo [uJoongsung];
 
   //'ㄱ'(1) 이나 'ㅋ'(16) 인경우는
-  uJooType = ((uChosung == 0 || uChosung == 1 ||uChosung == 16 ) ? 0: 1) + (uJongsung ? 2: 0);
+  uJooType = ((uChosung == 0 || uChosung == 1 || uChosung == 16 ) ? 0: 1) + (uJongsung ? 2 : 0);
   uJonType = JonType[uJoongsung];
 
   for(i = 0; i<32; i++)

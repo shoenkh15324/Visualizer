@@ -1,6 +1,6 @@
-../Core/api/source/gpio_api.c:38:6:gpioInit	16	static
-../Core/api/source/gpio_api.c:49:6:gpioPinMode	40	static
-../Core/api/source/gpio_api.c:98:6:gpioPinWrite	24	static
-../Core/api/source/gpio_api.c:115:6:gpioPinRead	24	static
-../Core/api/source/gpio_api.c:132:6:gpioPinToggle	16	static
-../Core/api/source/gpio_api.c:145:6:cliGpio	40	static
+../Core/api/source/gpio_api.c:41:6:gpioInit	16	static
+../Core/api/source/gpio_api.c:52:6:gpioPinMode	40	static
+../Core/api/source/gpio_api.c:101:6:gpioPinWrite	24	static
+../Core/api/source/gpio_api.c:118:6:gpioPinRead	24	static
+../Core/api/source/gpio_api.c:135:6:gpioPinToggle	16	static
+../Core/api/source/gpio_api.c:148:6:cliGpio	40	static

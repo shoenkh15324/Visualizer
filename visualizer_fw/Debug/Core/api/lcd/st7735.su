@@ -1,0 +1,14 @@
+../Core/api/lcd/st7735.c:50:13:TransferDoneISR	8	static
+../Core/api/lcd/st7735.c:64:6:st7735Init	16	static
+../Core/api/lcd/st7735.c:73:6:st7735InitDriver	16	static
+../Core/api/lcd/st7735.c:86:6:st7735Reset	16	static
+../Core/api/lcd/st7735.c:107:10:st7735GetWidth	4	static
+../Core/api/lcd/st7735.c:112:10:st7735GetHeight	4	static
+../Core/api/lcd/st7735.c:117:6:writecommand	16	static
+../Core/api/lcd/st7735.c:127:6:writedata	16	static
+../Core/api/lcd/st7735.c:137:6:st7735InitRegs	8	static
+../Core/api/lcd/st7735.c:221:6:st7735SetRotation	16	static
+../Core/api/lcd/st7735.c:245:6:st7735SetWindow	24	static
+../Core/api/lcd/st7735.c:264:6:st7735FillRect	64	dynamic
+../Core/api/lcd/st7735.c:300:6:st7735SendBuffer	24	static
+../Core/api/lcd/st7735.c:314:6:st7735SetCallBack	16	static

@@ -111,7 +111,7 @@ void spiSetDataMode(uint8_t ch, uint8_t dataMode)
 	}
 }
 
-void spiBitWidth(uint8_t ch, uint8_t bit_width)
+void spiSetBitWidth(uint8_t ch, uint8_t bit_width)
 {
 	spi_t *p_spi = &spi_tbl[ch];
 

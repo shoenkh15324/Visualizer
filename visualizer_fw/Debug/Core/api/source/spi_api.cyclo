@@ -1,7 +1,7 @@
 ../Core/api/source/spi_api.c:35:6:spiInit	2
 ../Core/api/source/spi_api.c:56:6:spiBegin	2
 ../Core/api/source/spi_api.c:76:6:spiSetDataMode	6
-../Core/api/source/spi_api.c:114:6:spiBitWidth	3
+../Core/api/source/spi_api.c:114:6:spiSetBitWidth	3
 ../Core/api/source/spi_api.c:129:9:spiTransfer8	2
 ../Core/api/source/spi_api.c:141:10:spiTransfer16	3
 ../Core/api/source/spi_api.c:169:6:spiTransfer	5

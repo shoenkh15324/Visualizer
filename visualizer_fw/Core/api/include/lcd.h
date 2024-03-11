@@ -58,7 +58,7 @@ typedef struct lcd_driver_t_
 	void (*setWindow)(int32_t x, int32_t y, int32_t w, int32_t h);
 	uint16_t (*getWidth)(void);
 	uint16_t (*getHeight)(void);
-	bool (*setCallback)(void (*p_func)(void));
+	bool (*setCallBack)(void (*p_func)(void));
 	bool (*sendBuffer)(uint8_t *p_data, uint32_t length, uint32_t timeout_ms);
 } lcd_driver_t;
 
@@ -99,9 +99,9 @@ void lcdDrawVLine(int16_t x, int16_t y, int16_t h, uint16_t color);
 void lcdDrawHLine(int16_t x, int16_t y, int16_t h, uint16_t color);
 void lcdDrawFillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
 void lcdDrawFillScreen(uint16_t color);
-void lcdDrawRect(int16_t x, int16_t y, int16_t w, uint16_t h, uint16_t color);
+void lcdDrawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
 void lcdDrawFillCircle(int32_t x0, int32_t y0, int32_t r, uint16_t color);
-void lcdDrawRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, int32_t r, uint16_t color);
+void lcdDrawRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, int32_t r, uint32_t color);
 void lcdDrawTriangle(int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, uint32_t color);
 void lcdDrawFillTriangle(int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, uint32_t color);
 void lcdDrawString(int x, int y, uint16_t color, const char *str);

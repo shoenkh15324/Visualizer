@@ -25,7 +25,7 @@
 #define HW_UART_MAX_CH		2
 
 #define _USE_HW_GPIO
-#define HW_GPIO_MAX_CH		1
+#define HW_GPIO_MAX_CH		4
 
 #define _USE_HW_SD
 #define _PIN_GPIO_SDCARD_DETECT     0
@@ -40,7 +40,7 @@
 #define HW_SPI_MAX_CH		1
 
 #define _USE_HW_LCD
-#define HW_LCD_MODEL		2
+#define HW_LCD_MODEL		0
 #if HW_LCD_MODEL == 0
 #define _USE_HW_ST7735
 #define      HW_ST7735_MODEL        0
@@ -73,6 +73,15 @@
 
 
 #define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
+
+#ifndef max
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+#define min(a,b) (((a) < (b)) ? (a) : (b))
+#endif
+
+#ifndef map
+#define map(value, in_min, in_max, out_min, out_max) ((value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
+#endif
 
 
 #endif /* API_HW_DEF_H_ */

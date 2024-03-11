@@ -14,6 +14,8 @@
 "./Core/api/qbuffer.o"
 "./Core/api/fatfs/sd_diskio.o"
 "./Core/api/hangul/han.o"
+"./Core/api/lcd/lcd_fonts.o"
+"./Core/api/lcd/st7735.o"
 "./Core/api/source/cdc.o"
 "./Core/api/source/cli.o"
 "./Core/api/source/fatfs.o"

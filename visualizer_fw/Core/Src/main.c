@@ -36,6 +36,7 @@
 #include "fatfs.h"
 #include "flash.h"
 #include "spi_api.h"
+#include "lcd.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -110,6 +111,7 @@ int main(void)
   fatfsInit();
   flashInit();
   spiInit();
+  lcdInit();
 
   cliOpen(_DEF_UART1, 115200);
 
@@ -122,6 +124,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+
   	cliMain();
   }
   /* USER CODE END 3 */

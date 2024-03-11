@@ -27,6 +27,7 @@ Core/Startup \
 Core/api \
 Core/api/fatfs \
 Core/api/hangul \
+Core/api/lcd \
 Core/api/source \
 Drivers/STM32F4xx_HAL_Driver/Src \
 FatFs/src \
