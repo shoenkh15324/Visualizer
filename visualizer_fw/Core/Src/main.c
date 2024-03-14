@@ -124,7 +124,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
+  	lcdDrawFillRect(0, 70, 10, 10, red);
 
   	cliMain();
   }
