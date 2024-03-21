@@ -1,0 +1,12 @@
+../Core/api/lcd/ssd1306.c:34:6:ssd1306Init	16	static
+../Core/api/lcd/ssd1306.c:43:6:ssd1306InitDriver	16	static
+../Core/api/lcd/ssd1306.c:55:6:ssd1306WriteCmd	24	static
+../Core/api/lcd/ssd1306.c:60:6:ssd1306Reset	16	static
+../Core/api/lcd/ssd1306.c:112:6:ssd1306SetWindow	24	static
+../Core/api/lcd/ssd1306.c:117:10:ssd1306GetWidth	4	static
+../Core/api/lcd/ssd1306.c:122:10:ssd1306GetHeight	4	static
+../Core/api/lcd/ssd1306.c:127:6:ssd1306SendBuffer	40	static
+../Core/api/lcd/ssd1306.c:148:6:ssd1306SetCallBack	16	static
+../Core/api/lcd/ssd1306.c:155:6:ssd1306Fill	24	static
+../Core/api/lcd/ssd1306.c:165:6:ssd1306UpdateDraw	24	static
+../Core/api/lcd/ssd1306.c:184:6:ssd1306DrawPixel	16	static

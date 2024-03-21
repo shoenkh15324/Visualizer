@@ -1,0 +1,12 @@
+../Core/api/lcd/ssd1306.c:34:6:ssd1306Init	1
+../Core/api/lcd/ssd1306.c:43:6:ssd1306InitDriver	1
+../Core/api/lcd/ssd1306.c:55:6:ssd1306WriteCmd	1
+../Core/api/lcd/ssd1306.c:60:6:ssd1306Reset	3
+../Core/api/lcd/ssd1306.c:112:6:ssd1306SetWindow	1
+../Core/api/lcd/ssd1306.c:117:10:ssd1306GetWidth	1
+../Core/api/lcd/ssd1306.c:122:10:ssd1306GetHeight	1
+../Core/api/lcd/ssd1306.c:127:6:ssd1306SendBuffer	4
+../Core/api/lcd/ssd1306.c:148:6:ssd1306SetCallBack	1
+../Core/api/lcd/ssd1306.c:155:6:ssd1306Fill	3
+../Core/api/lcd/ssd1306.c:165:6:ssd1306UpdateDraw	3
+../Core/api/lcd/ssd1306.c:184:6:ssd1306DrawPixel	4

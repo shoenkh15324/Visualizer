@@ -6,14 +6,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/api/lcd/lcd_fonts.c \
+../Core/api/lcd/ssd1306.c \
 ../Core/api/lcd/st7735.c 
 
 OBJS += \
 ./Core/api/lcd/lcd_fonts.o \
+./Core/api/lcd/ssd1306.o \
 ./Core/api/lcd/st7735.o 
 
 C_DEPS += \
 ./Core/api/lcd/lcd_fonts.d \
+./Core/api/lcd/ssd1306.d \
 ./Core/api/lcd/st7735.d 
 
 
@@ -24,7 +27,7 @@ Core/api/lcd/%.o Core/api/lcd/%.su Core/api/lcd/%.cyclo: ../Core/api/lcd/%.c Cor
 clean: clean-Core-2f-api-2f-lcd
 
 clean-Core-2f-api-2f-lcd:
-	-$(RM) ./Core/api/lcd/lcd_fonts.cyclo ./Core/api/lcd/lcd_fonts.d ./Core/api/lcd/lcd_fonts.o ./Core/api/lcd/lcd_fonts.su ./Core/api/lcd/st7735.cyclo ./Core/api/lcd/st7735.d ./Core/api/lcd/st7735.o ./Core/api/lcd/st7735.su
+	-$(RM) ./Core/api/lcd/lcd_fonts.cyclo ./Core/api/lcd/lcd_fonts.d ./Core/api/lcd/lcd_fonts.o ./Core/api/lcd/lcd_fonts.su ./Core/api/lcd/ssd1306.cyclo ./Core/api/lcd/ssd1306.d ./Core/api/lcd/ssd1306.o ./Core/api/lcd/ssd1306.su ./Core/api/lcd/st7735.cyclo ./Core/api/lcd/st7735.d ./Core/api/lcd/st7735.o ./Core/api/lcd/st7735.su
 
 .PHONY: clean-Core-2f-api-2f-lcd
 
