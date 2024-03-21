@@ -60,6 +60,9 @@
 #define      HW_LCD_HEIGHT          128
 #endif
 
+#define _USE_HW_I2C
+#define HW_I2C_MAX_CH					1
+
 // GPIO mode set
 #define _DEF_LOW              0
 #define _DEF_HIGH             1

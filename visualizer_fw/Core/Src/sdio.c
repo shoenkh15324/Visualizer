@@ -21,7 +21,8 @@
 #include "sdio.h"
 
 /* USER CODE BEGIN 0 */
-
+__weak void HAL_SD_MspInit(SD_HandleTypeDef* sdHandle);
+__weak void HAL_SD_MspDeInit(SD_HandleTypeDef* sdHandle);
 /* USER CODE END 0 */
 
 SD_HandleTypeDef hsd;

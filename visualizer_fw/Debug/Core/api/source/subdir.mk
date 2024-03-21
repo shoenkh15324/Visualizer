@@ -9,6 +9,7 @@ C_SRCS += \
 ../Core/api/source/cli.c \
 ../Core/api/source/fatfs.c \
 ../Core/api/source/gpio_api.c \
+../Core/api/source/i2c_api.c \
 ../Core/api/source/lcd.c \
 ../Core/api/source/led.c \
 ../Core/api/source/sd.c \
@@ -20,6 +21,7 @@ OBJS += \
 ./Core/api/source/cli.o \
 ./Core/api/source/fatfs.o \
 ./Core/api/source/gpio_api.o \
+./Core/api/source/i2c_api.o \
 ./Core/api/source/lcd.o \
 ./Core/api/source/led.o \
 ./Core/api/source/sd.o \
@@ -31,6 +33,7 @@ C_DEPS += \
 ./Core/api/source/cli.d \
 ./Core/api/source/fatfs.d \
 ./Core/api/source/gpio_api.d \
+./Core/api/source/i2c_api.d \
 ./Core/api/source/lcd.d \
 ./Core/api/source/led.d \
 ./Core/api/source/sd.d \
@@ -45,7 +48,7 @@ Core/api/source/%.o Core/api/source/%.su Core/api/source/%.cyclo: ../Core/api/so
 clean: clean-Core-2f-api-2f-source
 
 clean-Core-2f-api-2f-source:
-	-$(RM) ./Core/api/source/cdc.cyclo ./Core/api/source/cdc.d ./Core/api/source/cdc.o ./Core/api/source/cdc.su ./Core/api/source/cli.cyclo ./Core/api/source/cli.d ./Core/api/source/cli.o ./Core/api/source/cli.su ./Core/api/source/fatfs.cyclo ./Core/api/source/fatfs.d ./Core/api/source/fatfs.o ./Core/api/source/fatfs.su ./Core/api/source/gpio_api.cyclo ./Core/api/source/gpio_api.d ./Core/api/source/gpio_api.o ./Core/api/source/gpio_api.su ./Core/api/source/lcd.cyclo ./Core/api/source/lcd.d ./Core/api/source/lcd.o ./Core/api/source/lcd.su ./Core/api/source/led.cyclo ./Core/api/source/led.d ./Core/api/source/led.o ./Core/api/source/led.su ./Core/api/source/sd.cyclo ./Core/api/source/sd.d ./Core/api/source/sd.o ./Core/api/source/sd.su ./Core/api/source/spi_api.cyclo ./Core/api/source/spi_api.d ./Core/api/source/spi_api.o ./Core/api/source/spi_api.su ./Core/api/source/uart.cyclo ./Core/api/source/uart.d ./Core/api/source/uart.o ./Core/api/source/uart.su
+	-$(RM) ./Core/api/source/cdc.cyclo ./Core/api/source/cdc.d ./Core/api/source/cdc.o ./Core/api/source/cdc.su ./Core/api/source/cli.cyclo ./Core/api/source/cli.d ./Core/api/source/cli.o ./Core/api/source/cli.su ./Core/api/source/fatfs.cyclo ./Core/api/source/fatfs.d ./Core/api/source/fatfs.o ./Core/api/source/fatfs.su ./Core/api/source/gpio_api.cyclo ./Core/api/source/gpio_api.d ./Core/api/source/gpio_api.o ./Core/api/source/gpio_api.su ./Core/api/source/i2c_api.cyclo ./Core/api/source/i2c_api.d ./Core/api/source/i2c_api.o ./Core/api/source/i2c_api.su ./Core/api/source/lcd.cyclo ./Core/api/source/lcd.d ./Core/api/source/lcd.o ./Core/api/source/lcd.su ./Core/api/source/led.cyclo ./Core/api/source/led.d ./Core/api/source/led.o ./Core/api/source/led.su ./Core/api/source/sd.cyclo ./Core/api/source/sd.d ./Core/api/source/sd.o ./Core/api/source/sd.su ./Core/api/source/spi_api.cyclo ./Core/api/source/spi_api.d ./Core/api/source/spi_api.o ./Core/api/source/spi_api.su ./Core/api/source/uart.cyclo ./Core/api/source/uart.d ./Core/api/source/uart.o ./Core/api/source/uart.su
 
 .PHONY: clean-Core-2f-api-2f-source
 

@@ -6,10 +6,13 @@
  */
 
 
-#include "st7735.h"
-#include "st7735_regs.h"
+
 #include "spi_api.h"
 #include "gpio_api.h"
+#include "lcd/st7735.h"
+#include "lcd/st7735_regs.h"
+
+
 
 #ifdef _USE_HW_ST7735
 
@@ -25,12 +28,14 @@
 #define MADCTL_BGR      0x08
 #define MADCTL_MH       0x04
 
-static uint8_t spi_ch = _DEF_SPI1;
 
-static const int32_t _width = HW_LCD_WIDTH;
+
+static uint8_t   spi_ch = _DEF_SPI1;
+
+static const int32_t _width  = HW_LCD_WIDTH;
 static const int32_t _height = HW_LCD_HEIGHT;
 static void (*frameCallBack)(void) = NULL;
-volatile static bool is_write_frame = false;
+volatile static bool  is_write_frame = false;
 
 #if HW_ST7735_MODEL == 0
 const uint32_t colstart = 1;
@@ -47,71 +52,72 @@ static void st7735FillRect(int32_t x, int32_t y, int32_t w, int32_t h, uint32_t 
 static void st7735SetRotation(uint8_t m);
 static bool st7735Reset(void);
 
+
 static void TransferDoneISR(void)
 {
-	if(is_write_frame == true)
-	{
-		is_write_frame = false;
-		gpioPinWrite(_PIN_DEF_CS, _DEF_HIGH);
+  if (is_write_frame == true)
+  {
+    is_write_frame = false;
+    gpioPinWrite(_PIN_DEF_CS, _DEF_HIGH);
 
-		if(frameCallBack != NULL)
-		{
-			frameCallBack();
-		}
-	}
+    if (frameCallBack != NULL)
+    {
+      frameCallBack();
+    }
+  }
 }
+
 
 bool st7735Init(void)
 {
-	bool ret;
+  bool ret;
 
-	ret = st7735Reset();
+  ret = st7735Reset();
 
-	return ret;
+  return ret;
 }
 
 bool st7735InitDriver(lcd_driver_t *p_driver)
 {
-	p_driver->init = st7735Init;
-	p_driver->reset = st7735Reset;
-	p_driver->setWindow = st7735SetWindow;
-	p_driver->getWidth = st7735GetWidth;
-	p_driver->getHeight = st7735GetHeight;
-	p_driver->setCallBack = st7735SetCallBack;
-	p_driver->sendBuffer = st7735SendBuffer;
-
-	return true;
+  p_driver->init = st7735Init;
+  p_driver->reset = st7735Reset;
+  p_driver->setWindow = st7735SetWindow;
+  p_driver->getWidth = st7735GetWidth;
+  p_driver->getHeight = st7735GetHeight;
+  p_driver->setCallBack = st7735SetCallBack;
+  p_driver->sendBuffer = st7735SendBuffer;
+  return true;
 }
 
 bool st7735Reset(void)
 {
-	spiBegin(spi_ch);
-	spiSetDataMode(spi_ch, SPI_MODE0);
+  spiBegin(spi_ch);
+  spiSetDataMode(spi_ch, SPI_MODE0);
 
-	spiAttachTxInterrupt(spi_ch, TransferDoneISR);
+  spiAttachTxInterrupt(spi_ch, TransferDoneISR);
 
-	gpioPinWrite(_PIN_DEF_BKT, _DEF_LOW);
-	gpioPinWrite(_PIN_DEF_DC, _DEF_HIGH);
-	gpioPinWrite(_PIN_DEF_CS, _DEF_HIGH);
-	delay(10);
+  gpioPinWrite(_PIN_DEF_BKT, _DEF_LOW);
+  gpioPinWrite(_PIN_DEF_DC,  _DEF_HIGH);
+  gpioPinWrite(_PIN_DEF_CS,  _DEF_HIGH);
+  delay(10);
 
-	st7735InitRegs();
+  st7735InitRegs();
 
-	st7735SetRotation(3);
-	st7735FillRect(0, 0, HW_LCD_WIDTH, HW_LCD_HEIGHT, black);
-	gpioPinWrite(_PIN_DEF_BKT, _DEF_LOW);
 
-	return true;
+  st7735SetRotation(3);
+  st7735FillRect(0, 0, HW_LCD_WIDTH, HW_LCD_HEIGHT, black);
+  gpioPinWrite(_PIN_DEF_BKT, _DEF_LOW);
+  return true;
 }
 
 uint16_t st7735GetWidth(void)
 {
-	return HW_LCD_WIDTH;
+  return HW_LCD_WIDTH;
 }
 
 uint16_t st7735GetHeight(void)
 {
-	return HW_LCD_HEIGHT;
+  return HW_LCD_HEIGHT;
 }
 
 void writecommand(uint8_t c)
@@ -299,23 +305,22 @@ void st7735FillRect(int32_t x, int32_t y, int32_t w, int32_t h, uint32_t color)
 
 bool st7735SendBuffer(uint8_t *p_data, uint32_t length, uint32_t timeout_ms)
 {
-	is_write_frame = true;
+  is_write_frame = true;
 
-	spiSetBitWidth(spi_ch, 16);
+  spiSetBitWidth(spi_ch, 16);
 
-	gpioPinWrite(_PIN_DEF_DC, _DEF_HIGH);
-	gpioPinWrite(_PIN_DEF_CS, _DEF_LOW);
+  gpioPinWrite(_PIN_DEF_DC, _DEF_HIGH);
+  gpioPinWrite(_PIN_DEF_CS, _DEF_LOW);
 
-	spiDmaTxTransfer(_DEF_SPI1, (void *)p_data, length, 0);
-
-	return true;
+  spiDmaTxTransfer(_DEF_SPI1, (void *)p_data, length, 0);
+  return true;
 }
 
 bool st7735SetCallBack(void (*p_func)(void))
 {
-	frameCallBack = p_func;
+  frameCallBack = p_func;
 
-	return true;
+  return true;
 }
 
 

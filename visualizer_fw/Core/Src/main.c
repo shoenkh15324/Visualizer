@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dma.h"
+#include "i2c.h"
 #include "sdio.h"
 #include "spi.h"
 #include "usb_device.h"
@@ -37,6 +38,7 @@
 #include "flash.h"
 #include "spi_api.h"
 #include "lcd.h"
+#include "i2c_api.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,18 +104,25 @@ int main(void)
   MX_DMA_Init();
   MX_USB_DEVICE_Init();
   MX_SDIO_SD_Init();
-  MX_SPI4_Init();
+  //MX_SPI4_Init();
+  //MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
   cliInit();
   ledInit();
   gpioInit();
-  sdInit();
-  fatfsInit();
   flashInit();
   spiInit();
+  i2cInit();
+
+  if(sdInit() == true)
+  {
+  	fatfsInit();
+  }
+
   lcdInit();
 
-  cliOpen(_DEF_UART1, 115200);
+
+  cliOpen(_DEF_UART1, 57600);
 
   /* USER CODE END 2 */
 
@@ -124,7 +133,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  	lcdDrawFillRect(0, 70, 10, 10, red);
 
   	cliMain();
   }
