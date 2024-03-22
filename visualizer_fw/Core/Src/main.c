@@ -39,6 +39,7 @@
 #include "spi_api.h"
 #include "lcd.h"
 #include "i2c_api.h"
+#include "mcp2515.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -104,8 +105,9 @@ int main(void)
   MX_DMA_Init();
   MX_USB_DEVICE_Init();
   MX_SDIO_SD_Init();
-  //MX_SPI4_Init();
-  //MX_I2C2_Init();
+  MX_SPI4_Init();
+  MX_I2C2_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
   cliInit();
   ledInit();
@@ -113,6 +115,7 @@ int main(void)
   flashInit();
   spiInit();
   i2cInit();
+  mcp2515Init();
 
   if(sdInit() == true)
   {

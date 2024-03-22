@@ -41,4 +41,4 @@
 ../Core/api/source/lcd.c:764:6:disEngFont	4
 ../Core/api/source/lcd.c:783:6:lcdSetFont	1
 ../Core/api/source/lcd.c:788:9:lcdGetFont	1
-../Core/api/source/lcd.c:795:6:cliLcd	13
+../Core/api/source/lcd.c:795:6:cliLcd	11

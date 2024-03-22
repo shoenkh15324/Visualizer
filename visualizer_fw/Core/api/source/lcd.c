@@ -850,18 +850,10 @@ void cliLcd(cli_args_t *args)
 		ret = true;
 	}
 
-	if(args->argc == 1 && args->isStr(0, "cb") == true)
-	{
-		lcdClearBuffer(white);
-
-		ret = true;
-	}
-
 	if(ret != true)
 	{
 		cliPrintf("lcd test\n");
 		cliPrintf("lcd bl on/off\n");
-		cliPrintf("lcd cb\n");
 	}
 }
 

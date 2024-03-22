@@ -25,6 +25,7 @@
 "./Core/api/source/i2c_api.o"
 "./Core/api/source/lcd.o"
 "./Core/api/source/led.o"
+"./Core/api/source/mcp2515.o"
 "./Core/api/source/sd.o"
 "./Core/api/source/spi_api.o"
 "./Core/api/source/uart.o"

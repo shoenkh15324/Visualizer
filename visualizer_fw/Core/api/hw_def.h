@@ -16,6 +16,7 @@
 #define _USE_HW_CDC
 #define _USE_HW_FLASH
 #define _USE_HW_FATFS
+#define _USE_HW_MCP2515
 
 
 #define _USE_HW_LED
