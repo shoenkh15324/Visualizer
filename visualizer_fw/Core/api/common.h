@@ -18,7 +18,9 @@
 #include <stdlib.h>
 
 #include "stm32f4xx_hal.h"
-
+#include "arm_math.h"
+#include "arm_const_structs.h"
+#include "cmsis_os.h"
 
 void delay(uint32_t ms);
 uint32_t millis(void);

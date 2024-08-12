@@ -25,9 +25,9 @@ __weak void HAL_SPI_MspInit(SPI_HandleTypeDef* spiHandle);
 __weak void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle);
 /* USER CODE END 0 */
 
-__weak SPI_HandleTypeDef hspi1;
-__weak SPI_HandleTypeDef hspi4;
-__weak DMA_HandleTypeDef hdma_spi4_tx;
+//SPI_HandleTypeDef hspi1;
+//SPI_HandleTypeDef hspi4;
+//DMA_HandleTypeDef hdma_spi4_tx;
 
 /* SPI1 init function */
 void MX_SPI1_Init(void)
@@ -128,7 +128,7 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* spiHandle)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     /* SPI1 interrupt Init */
-    HAL_NVIC_SetPriority(SPI1_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(SPI1_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(SPI1_IRQn);
   /* USER CODE BEGIN SPI1_MspInit 1 */
 

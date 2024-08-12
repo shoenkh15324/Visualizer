@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -9,10 +9,15 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include mp3/subdir.mk
 -include USB_DEVICE/Target/subdir.mk
 -include USB_DEVICE/App/subdir.mk
 -include Middlewares/ST/STM32_USB_Device_Library/Core/Src/subdir.mk
 -include Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/subdir.mk
+-include FreeRTOS/Source/portable/MemMang/subdir.mk
+-include FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
+-include FreeRTOS/Source/CMSIS_RTOS/subdir.mk
+-include FreeRTOS/Source/subdir.mk
 -include FatFs/src/option/subdir.mk
 -include FatFs/src/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
@@ -72,7 +77,7 @@ main-build: visualizer_fw.elf secondary-outputs
 
 # Tool invocations
 visualizer_fw.elf visualizer_fw.map: $(OBJS) $(USER_OBJS) C:\Users\mok07\Desktop\Study\Project\STM32CUBEIDE_project\visualizer\visualizer_fw\STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "visualizer_fw.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\mok07\Desktop\Study\Project\STM32CUBEIDE_project\visualizer\visualizer_fw\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="visualizer_fw.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "visualizer_fw.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\mok07\Desktop\Study\Project\STM32CUBEIDE_project\visualizer\visualizer_fw\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="visualizer_fw.map" -Wl,--gc-sections -static -L"C:\Users\mok07\Desktop\Study\Project\STM32CUBEIDE_project\visualizer\visualizer_fw\CMSIS" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

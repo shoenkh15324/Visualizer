@@ -1,0 +1,2 @@
+../mp3/buffers.c:99:13:xmp3_AllocateBuffers	40	static
+../mp3/buffers.c:212:6:xmp3_FreeBuffers	0	static

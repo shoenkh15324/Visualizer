@@ -23,9 +23,11 @@
 /* USER CODE BEGIN 0 */
 __weak void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle);
 __weak void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle);
+__weak void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle);
+
 /* USER CODE END 0 */
 
-__weak I2C_HandleTypeDef hi2c2;
+//I2C_HandleTypeDef hi2c2;
 
 /* I2C2 init function */
 void MX_I2C2_Init(void)
@@ -90,9 +92,9 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
     __HAL_RCC_I2C2_CLK_ENABLE();
 
     /* I2C2 interrupt Init */
-    HAL_NVIC_SetPriority(I2C2_EV_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(I2C2_EV_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(I2C2_EV_IRQn);
-    HAL_NVIC_SetPriority(I2C2_ER_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(I2C2_ER_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(I2C2_ER_IRQn);
   /* USER CODE BEGIN I2C2_MspInit 1 */
 

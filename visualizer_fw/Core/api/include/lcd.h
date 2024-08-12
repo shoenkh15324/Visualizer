@@ -86,7 +86,7 @@ uint32_t lcdGetFpsTime(void);
 uint32_t lcdGetDrawTime(void);
 
 int32_t lcdGetWidth(void);
-int32_t lcdGetHeigth(void);
+int32_t lcdGetHeight(void);
 
 uint16_t *lcdGetFrameBuffer(void);
 uint16_t *lcdGetCurrentFrameBuffer(void);

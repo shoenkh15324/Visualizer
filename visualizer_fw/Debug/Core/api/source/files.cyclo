@@ -1,0 +1,12 @@
+../Core/api/source/files.c:18:7:ob_malloc	3
+../Core/api/source/files.c:35:6:ob_free	4
+../Core/api/source/files.c:47:7:ob_fopen	8
+../Core/api/source/files.c:86:5:ob_fclose	2
+../Core/api/source/files.c:101:8:ob_fread	2
+../Core/api/source/files.c:115:8:ob_fwrite	2
+../Core/api/source/files.c:129:5:ob_fflush	3
+../Core/api/source/files.c:148:5:ob_feof	1
+../Core/api/source/files.c:155:5:ob_fseek	7
+../Core/api/source/files.c:188:6:ob_ftell	1
+../Core/api/source/files.c:195:5:ob_fgetc	2
+../Core/api/source/files.c:211:7:ob_fgets	1

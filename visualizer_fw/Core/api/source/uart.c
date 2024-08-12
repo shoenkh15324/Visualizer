@@ -13,6 +13,7 @@
 
 
 #define _USE_UART1
+#define _USE_UART2
 
 #ifdef _USE_HW_UART
 
@@ -26,12 +27,10 @@ static bool is_open[UART_MAX_CH]; // check channel number
 static qbuffer_t qbuffer[UART_MAX_CH]; // Make qbuffer as number of uart channels
 static uint8_t rx_buf[256]; // Size of qbuffer
 
-//UART_HandleTypeDef huart1;
-//DMA_HandleTypeDef  hdma_usart1_rx;
+UART_HandleTypeDef huart1;
+DMA_HandleTypeDef  hdma_usart1_rx;
 
 #endif
-
-
 
 bool uartInit(void)
 {

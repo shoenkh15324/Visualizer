@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -8,8 +8,10 @@ C_SRCS += \
 ../Core/api/source/cdc.c \
 ../Core/api/source/cli.c \
 ../Core/api/source/fatfs.c \
+../Core/api/source/files.c \
 ../Core/api/source/gpio_api.c \
 ../Core/api/source/i2c_api.c \
+../Core/api/source/i2s_api.c \
 ../Core/api/source/lcd.c \
 ../Core/api/source/led.c \
 ../Core/api/source/mcp2515.c \
@@ -21,8 +23,10 @@ OBJS += \
 ./Core/api/source/cdc.o \
 ./Core/api/source/cli.o \
 ./Core/api/source/fatfs.o \
+./Core/api/source/files.o \
 ./Core/api/source/gpio_api.o \
 ./Core/api/source/i2c_api.o \
+./Core/api/source/i2s_api.o \
 ./Core/api/source/lcd.o \
 ./Core/api/source/led.o \
 ./Core/api/source/mcp2515.o \
@@ -34,8 +38,10 @@ C_DEPS += \
 ./Core/api/source/cdc.d \
 ./Core/api/source/cli.d \
 ./Core/api/source/fatfs.d \
+./Core/api/source/files.d \
 ./Core/api/source/gpio_api.d \
 ./Core/api/source/i2c_api.d \
+./Core/api/source/i2s_api.d \
 ./Core/api/source/lcd.d \
 ./Core/api/source/led.d \
 ./Core/api/source/mcp2515.d \
@@ -46,12 +52,12 @@ C_DEPS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Core/api/source/%.o Core/api/source/%.su Core/api/source/%.cyclo: ../Core/api/source/%.c Core/api/source/subdir.mk
-	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/include" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/source" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/FatFs/src" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/fatfs" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/hangul" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/lcd" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/include" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/source" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/FatFs/src" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/fatfs" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/hangul" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/Core/api/lcd" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/mp3" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/CMSIS/DSP/Include" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/FreeRTOS/Source/CMSIS_RTOS" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/FreeRTOS/Source/include" -I"C:/Users/mok07/Desktop/Study/Project/STM32CUBEIDE_project/visualizer/visualizer_fw/FreeRTOS/Source/portable/GCC/ARM_CM4F" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
 clean: clean-Core-2f-api-2f-source
 
 clean-Core-2f-api-2f-source:
-	-$(RM) ./Core/api/source/cdc.cyclo ./Core/api/source/cdc.d ./Core/api/source/cdc.o ./Core/api/source/cdc.su ./Core/api/source/cli.cyclo ./Core/api/source/cli.d ./Core/api/source/cli.o ./Core/api/source/cli.su ./Core/api/source/fatfs.cyclo ./Core/api/source/fatfs.d ./Core/api/source/fatfs.o ./Core/api/source/fatfs.su ./Core/api/source/gpio_api.cyclo ./Core/api/source/gpio_api.d ./Core/api/source/gpio_api.o ./Core/api/source/gpio_api.su ./Core/api/source/i2c_api.cyclo ./Core/api/source/i2c_api.d ./Core/api/source/i2c_api.o ./Core/api/source/i2c_api.su ./Core/api/source/lcd.cyclo ./Core/api/source/lcd.d ./Core/api/source/lcd.o ./Core/api/source/lcd.su ./Core/api/source/led.cyclo ./Core/api/source/led.d ./Core/api/source/led.o ./Core/api/source/led.su ./Core/api/source/mcp2515.cyclo ./Core/api/source/mcp2515.d ./Core/api/source/mcp2515.o ./Core/api/source/mcp2515.su ./Core/api/source/sd.cyclo ./Core/api/source/sd.d ./Core/api/source/sd.o ./Core/api/source/sd.su ./Core/api/source/spi_api.cyclo ./Core/api/source/spi_api.d ./Core/api/source/spi_api.o ./Core/api/source/spi_api.su ./Core/api/source/uart.cyclo ./Core/api/source/uart.d ./Core/api/source/uart.o ./Core/api/source/uart.su
+	-$(RM) ./Core/api/source/cdc.cyclo ./Core/api/source/cdc.d ./Core/api/source/cdc.o ./Core/api/source/cdc.su ./Core/api/source/cli.cyclo ./Core/api/source/cli.d ./Core/api/source/cli.o ./Core/api/source/cli.su ./Core/api/source/fatfs.cyclo ./Core/api/source/fatfs.d ./Core/api/source/fatfs.o ./Core/api/source/fatfs.su ./Core/api/source/files.cyclo ./Core/api/source/files.d ./Core/api/source/files.o ./Core/api/source/files.su ./Core/api/source/gpio_api.cyclo ./Core/api/source/gpio_api.d ./Core/api/source/gpio_api.o ./Core/api/source/gpio_api.su ./Core/api/source/i2c_api.cyclo ./Core/api/source/i2c_api.d ./Core/api/source/i2c_api.o ./Core/api/source/i2c_api.su ./Core/api/source/i2s_api.cyclo ./Core/api/source/i2s_api.d ./Core/api/source/i2s_api.o ./Core/api/source/i2s_api.su ./Core/api/source/lcd.cyclo ./Core/api/source/lcd.d ./Core/api/source/lcd.o ./Core/api/source/lcd.su ./Core/api/source/led.cyclo ./Core/api/source/led.d ./Core/api/source/led.o ./Core/api/source/led.su ./Core/api/source/mcp2515.cyclo ./Core/api/source/mcp2515.d ./Core/api/source/mcp2515.o ./Core/api/source/mcp2515.su ./Core/api/source/sd.cyclo ./Core/api/source/sd.d ./Core/api/source/sd.o ./Core/api/source/sd.su ./Core/api/source/spi_api.cyclo ./Core/api/source/spi_api.d ./Core/api/source/spi_api.o ./Core/api/source/spi_api.su ./Core/api/source/uart.cyclo ./Core/api/source/uart.d ./Core/api/source/uart.o ./Core/api/source/uart.su
 
 .PHONY: clean-Core-2f-api-2f-source
 

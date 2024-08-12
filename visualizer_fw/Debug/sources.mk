@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 ELF_SRCS := 
@@ -32,8 +32,13 @@ Core/api/source \
 Drivers/STM32F4xx_HAL_Driver/Src \
 FatFs/src \
 FatFs/src/option \
+FreeRTOS/Source/CMSIS_RTOS \
+FreeRTOS/Source \
+FreeRTOS/Source/portable/GCC/ARM_CM4F \
+FreeRTOS/Source/portable/MemMang \
 Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src \
 USB_DEVICE/App \
 USB_DEVICE/Target \
+mp3 \
 

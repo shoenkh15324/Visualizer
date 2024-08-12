@@ -13,6 +13,8 @@
 
 #ifdef _USE_HW_SD
 
+void Error_Handler(void);
+
 typedef struct
 {
 	uint32_t card_type;					// card type

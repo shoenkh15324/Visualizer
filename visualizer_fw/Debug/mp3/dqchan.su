@@ -1,0 +1,2 @@
+../mp3/dqchan.c:133:52:DequantBlock	72	static,ignoring_inline_asm
+../mp3/dqchan.c:245:45:xmp3_DequantChannel	104	static

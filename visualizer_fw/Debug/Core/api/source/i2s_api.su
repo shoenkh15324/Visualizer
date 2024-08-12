@@ -1,0 +1,12 @@
+../Core/api/source/i2s_api.c:47:6:i2sInit	16	static
+../Core/api/source/i2s_api.c:93:6:i2sSetSampleRate	24	static
+../Core/api/source/i2s_api.c:121:6:i2sStart	16	static
+../Core/api/source/i2s_api.c:138:6:i2sStop	4	static
+../Core/api/source/i2s_api.c:145:6:HAL_I2S_TxCpltCallback	24	static
+../Core/api/source/i2s_api.c:171:6:HAL_I2S_ErrorCallback	16	static
+../Core/api/source/i2s_api.c:176:6:HAL_I2S_MspInit	72	static
+../Core/api/source/i2s_api.c:242:13:HAL_I2S_MspDeInit	16	static
+../Core/api/source/i2s_api.c:314:12:fillReadBuffer	32	static
+../Core/api/source/i2s_api.c:329:13:drawBlock	40	static
+../Core/api/source/i2s_api.c:345:13:lcdUpdate	48	static
+../Core/api/source/i2s_api.c:439:6:cliI2S	10848	dynamic

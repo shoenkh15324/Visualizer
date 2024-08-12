@@ -29,37 +29,35 @@ static void cliSd(cli_args_t *args);
 
 bool sdInit(void)
 {
-  bool ret = false;
+	bool ret = false;
 
 
-  hsd.Instance            = SDIO;
-  hsd.Init.ClockEdge      = SDIO_CLOCK_EDGE_RISING;
-  hsd.Init.ClockBypass    = SDIO_CLOCK_BYPASS_DISABLE;
-  hsd.Init.ClockPowerSave = SDIO_CLOCK_POWER_SAVE_DISABLE;
-  hsd.Init.BusWide        = SDIO_BUS_WIDE_1B;
+	hsd.Instance            = SDIO;
+	hsd.Init.ClockEdge      = SDIO_CLOCK_EDGE_RISING;
+	hsd.Init.ClockBypass    = SDIO_CLOCK_BYPASS_DISABLE;
+	hsd.Init.ClockPowerSave = SDIO_CLOCK_POWER_SAVE_DISABLE;
+	hsd.Init.BusWide        = SDIO_BUS_WIDE_1B;
   hsd.Init.HardwareFlowControl = SDIO_HARDWARE_FLOW_CONTROL_DISABLE;
   hsd.Init.ClockDiv       = SDIO_TRANSFER_CLK_DIV;
 
+	is_detected = false;
+	if (gpioPinRead(_PIN_GPIO_SDCARD_DETECT) == true)
+	{
+	  is_detected = true;
+	}
 
-  is_detected = false;
-  if (gpioPinRead(_PIN_GPIO_SDCARD_DETECT) == true)
-  {
-    is_detected = true;
-  }
+	if (is_detected == true)
+	{
+	  if (HAL_SD_Init(&hsd) == HAL_OK)
+	  {
+	    if (HAL_SD_ConfigWideBusOperation(&hsd, SDIO_BUS_WIDE_4B) == HAL_OK)
+	    {
+	      ret = true;
+	    }
+	  }
+	}
 
-  if (is_detected == true)
-  {
-    if (HAL_SD_Init(&hsd) == HAL_OK)
-    {
-      if (HAL_SD_ConfigWideBusOperation(&hsd, SDIO_BUS_WIDE_4B) == HAL_OK)
-      {
-        ret = true;
-      }
-    }
-  }
-
-  is_init = ret;
-
+	is_init = ret;
 
 #ifdef _USE_HW_CLI
   cliAdd("sd", cliSd);

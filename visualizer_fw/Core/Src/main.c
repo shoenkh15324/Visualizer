@@ -20,10 +20,13 @@
 #include "main.h"
 #include "dma.h"
 #include "i2c.h"
+#include "i2s.h"
 #include "sdio.h"
 #include "spi.h"
+#include "usart.h"
 #include "usb_device.h"
 #include "gpio.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -40,6 +43,8 @@
 #include "lcd.h"
 #include "i2c_api.h"
 #include "mcp2515.h"
+#include "i2s_api.h"
+#include "files.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,7 +102,11 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+  MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_USB_DEVICE_Init();
 
+#if 0
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -106,9 +115,14 @@ int main(void)
   MX_USB_DEVICE_Init();
   MX_SDIO_SD_Init();
   MX_SPI4_Init();
-  MX_I2C2_Init();
   MX_SPI1_Init();
+  MX_I2S5_Init();
+  MX_I2C2_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+#endif
+
+  uartInit();
   cliInit();
   ledInit();
   gpioInit();
@@ -116,6 +130,7 @@ int main(void)
   spiInit();
   i2cInit();
   mcp2515Init();
+  i2sInit();
 
   if(sdInit() == true)
   {
@@ -124,18 +139,32 @@ int main(void)
 
   lcdInit();
 
+  cliOpen(_DEF_UART1, 115200);
 
-  cliOpen(_DEF_UART1, 57600);
+  //uartOpen(_DEF_UART2, 9600);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+	uint32_t pre_time;
+
+	pre_time = millis();
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+  	if(millis() - pre_time >= 1000)
+  	{
+  		pre_time = millis();
+    	if(uartAvailable(_DEF_UART1) >= 0)
+    	{
+
+    		uartPrintf(_DEF_UART1, "Hello world\n");
+    	}
+  	}
 
   	cliMain();
   }

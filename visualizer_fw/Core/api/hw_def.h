@@ -17,6 +17,7 @@
 #define _USE_HW_FLASH
 #define _USE_HW_FATFS
 #define _USE_HW_MCP2515
+#define _USE_HW_FILES
 
 
 #define _USE_HW_LED
@@ -63,6 +64,10 @@
 
 #define _USE_HW_I2C
 #define HW_I2C_MAX_CH					1
+
+#define _USE_HW_I2S
+#define HW_I2S_MAX_CH					1
+#define _PIN_GPIO_SPK_EN      6 // Speaker enable
 
 // GPIO mode set
 #define _DEF_LOW              0

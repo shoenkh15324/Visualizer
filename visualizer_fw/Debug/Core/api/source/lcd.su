@@ -11,9 +11,9 @@
 ../Core/api/source/lcd.c:201:18:lcdClearBuffer	8	static
 ../Core/api/source/lcd.c:211:18:lcdDrawFillCircle	48	static
 ../Core/api/source/lcd.c:242:18:lcdDrawCircleHelper	56	static
-../Core/api/source/lcd.c:283:18:lcdDrawRoundRect	72	static
+../Core/api/source/lcd.c:283:18:lcdDrawRoundRect	64	static
 ../Core/api/source/lcd.c:298:18:lcdDrawFillCircleHelper	56	static
-../Core/api/source/lcd.c:333:18:lcdDrawFillRoundRect	48	static
+../Core/api/source/lcd.c:333:18:lcdDrawFillRoundRect	40	static
 ../Core/api/source/lcd.c:343:18:lcdDrawTriangle	40	static
 ../Core/api/source/lcd.c:350:18:lcdDrawFillTriangle	80	dynamic
 ../Core/api/source/lcd.c:386:10:lcdGetFps	4	static
